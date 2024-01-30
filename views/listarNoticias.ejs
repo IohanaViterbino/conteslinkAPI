@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Alunos</title>
+</head>
+<body>
+    <header>
+        <h1>Listagem de Notícias</h1>
+      
+        </header>
+    <main>
+        <section>
+            <% if(noticias.length>0) { %>
+                  <%  noticias.forEach(a1=>{  %>
+                            <p> <%= a1.titulo %> </p>
+                    <% }) %>
+            <% } else { %>
+                    <p>Nenhum registro no Banco de Dados!</p>  
+            <% } %>
+        </section>
+    </main>
+</body>
+</html>

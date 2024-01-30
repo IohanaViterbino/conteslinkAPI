@@ -1,12 +1,20 @@
 // controllers/usuarioController.js
-const Noticias = require('../models/noticiasModel');
-const banco = [] //vetor que simula um banco de dados.
+const Noticias = require('../model/noticiasModel');
+const db = require('../databases/connection')
 
 const usuarioController = {
 
-    home: (req, res) =>{
-        res.send("Oi, tudo bem com você ?")
-    },
+    listarNoticias: (req, res) => {
+        db.select("*").table("noticias")
+            .then(noticia => {
+                console.log(noticia);
+                res.json({ noticias: noticia }); // Modificado para res.json()
+            })
+            .catch(error => {
+                console.log(error);
+                res.status(500).json({ error: 'Erro ao obter notícias.' }); // Adicionado tratamento de erro
+            });
+    },    
     criar: (req, res)=>{
         const {nome, email, senha} = req.body 
         console.log(nome)
@@ -19,13 +27,6 @@ const usuarioController = {
         }
         console.log(user)
     },
-    formCadastro: (req, res) =>{
-        res.render('CadUser')
-    },
-    listar: (req, res) =>{
-        res.render('listarUsers',{users:banco})
-    }
-
 }
 module.exports = usuarioController;
 
