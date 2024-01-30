@@ -4,28 +4,29 @@ const db = require('../databases/connection')
 
 const usuarioController = {
 
+    home: (req, res) =>{
+        res.render('index.js')
+    },
     listarNoticias: (req, res) => {
         db.select("*").table("noticias")
             .then(noticia => {
                 console.log(noticia);
-                res.json({ noticias: noticia }); // Modificado para res.json()
+                //res.json({ noticias: noticia });
+                res.render('listarNoticias', {noticias:noticia});
             })
             .catch(error => {
                 console.log(error);
                 res.status(500).json({ error: 'Erro ao obter notícias.' }); // Adicionado tratamento de erro
             });
     },    
-    criar: (req, res)=>{
-        const {nome, email, senha} = req.body 
-        console.log(nome)
-        const user = new Usuario(nome, email, senha)
-        if(user){
-            res.json(user)
-            banco.push(user)
-        }else{
-            res.send("Erro")
-        }
-        console.log(user)
+    criarNoticia: (req, res)=>{
+        const {titulo, descricao, data_publicacao, assunto, texto_materia, autor} = req.body 
+        db.insert({titulo, descricao, data_publicacao, assunto, texto_materia, autor}).table("noticias").then(data=>{
+            console.log(data)
+            res.json({message: 'Notícia salva com sucesso!'})
+        }).catch(error=>{
+            console.log(error)
+        })
     },
 }
 module.exports = usuarioController;

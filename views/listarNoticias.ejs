@@ -14,8 +14,27 @@
     <main>
         <section>
             <% if(noticias.length>0) { %>
+                <table border="1"> 
+                    <tr>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Data de Publicação</th>
+                        <th>Assunto</th>
+                        <th>Texto</th>
+                        <th>Autor</th>
+                        <th colspan="2">Ações</th>
+                    </tr>
                   <%  noticias.forEach(a1=>{  %>
-                            <p> <%= a1.titulo %> </p>
+                        <tr>
+                            <td> <%= a1.titulo %> </td>
+                            <td> <%= a1.descricao %> </td>
+                            <td> <%= a1.data_publicacao %> </td>
+                            <td> <%= a1.assunto %> </td>
+                            <td> <%= a1.texto_materia %> </td>
+                            <td> <%= a1.autor %> </td>
+                            <td><a href="/noticias/editarNoticia/<%= a1.id %>">Editar</a></td>
+                            <td><a href="/noticias/deletarNoticia/<%= a1.id %>">Remover</a></td>
+                        </tr>
                     <% }) %>
             <% } else { %>
                     <p>Nenhum registro no Banco de Dados!</p>  

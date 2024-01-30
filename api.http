@@ -1,3 +1,16 @@
 ###
 
 GET http://localhost:3000/noticias/listarNoticias
+
+###
+POST http://localhost:3000/noticias/criarNoticia
+Content-Type: application/json
+
+{
+    "titulo": "Título da Matéria",
+    "descricao": "Descrição da Matéria",
+    "data_publicacao": "2024-01-30 12:00:00",
+    "assunto": "Assunto da Matéria",
+    "texto_materia": "Conteúdo da Matéria...",
+    "autor": "Nome do Autor"
+}
