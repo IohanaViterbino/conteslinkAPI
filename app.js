@@ -11,7 +11,10 @@ app.use(express.urlencoded({extended: false}))
 app.use('/noticias', noticiasRoutes)
 app.set('view engine', 'ejs')
 
-
+app.get('/', (req, res) => {
+    res.render('index')
+})
+  
 app.listen(port, () => {
     console.log(`Aplicação rodando em http://localhost:${port}`)
   })
