@@ -1,8 +1,10 @@
 // routes/usuarioRoutes.js
 const express = require('express');
+const override = require('method-override')
 const noticiasController = require('../controller/noticiasController');
 
 const router = express.Router()
+router.use(override('_method'))
 
 // Rotas de notícia
 router.get('/', noticiasController.home);
