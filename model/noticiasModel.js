@@ -1,5 +1,5 @@
 class Noticias {
-    constructor(nome, email, senha) {
+    constructor(titulo, descricao, senha) {
       this.nome = nome;
       this.email = email;
       this.senha = senha;
