@@ -10,5 +10,7 @@ router.use(override('_method'))
 router.get('/', noticiasController.home);
 router.get('/listarNoticias', noticiasController.listarNoticias);
 router.post('/criarNoticia', noticiasController.criarNoticia);
+router.get('/editarNoticia/:id', noticiasController.formEditarAluno)
+router.get('/cadastroNoticia', noticiasController.formCadastro)
 
 module.exports = router;

@@ -28,6 +28,21 @@ const usuarioController = {
             console.log(error)
         })
     },
+    formEditarAluno:(req, res)=>{
+        const id = req.params
+        console.log(id)
+        db.select("*").table("noticias").where({id:id.id}).then(noticia=>{
+            console.log(noticia)
+            res.render('editarNoticia',{noticia})
+        }).catch(error=>{
+            console.log(error)
+        })
+    },
+    formCadastro:(req, res)=>{
+        res.render('cadastroNoticia')
+    },
+
+
 }
 module.exports = usuarioController;
 
