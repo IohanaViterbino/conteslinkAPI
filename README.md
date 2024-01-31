@@ -42,13 +42,6 @@ npm run dev
 
 O servidor será iniciado em `http://localhost:3000`. Você pode acessar a API a partir deste endpoint.
 
-## Endpoints Disponíveis
-
-- `GET /noticias`: Obtém todas as notícias.
-- `POST /noticias`: Cria uma nova notícia.
-- `PUT /noticias/:id`: Atualiza uma notícia existente.
-- `DELETE /noticias/:id`: Exclui uma notícia.
-
 ## Contribuidores
 - Flávio Alexandre - [Perfil Git](https://github.com/ClarkAshida)
 - Iohana Maria - [Perfil Git](https://github.com/IohanaViterbino)
