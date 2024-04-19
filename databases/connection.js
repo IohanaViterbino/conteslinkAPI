@@ -3,7 +3,7 @@ const knex = require('knex')({
     connection:{
         host:'localhost', //nome do host por padrão comumente localhost
         user: 'root', // nome do user por padrão root
-        password:'usbw', //senha do banco, as vezes ""
+        password:'my123SQL', //senha do banco, as vezes ""
         database:'conteslink' //nome da base de dados que será utilizada.
     }
 });
