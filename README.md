@@ -45,3 +45,8 @@ O servidor será iniciado em `http://localhost:3000`. Você pode acessar a API a
 ## Contribuidores
 - Flávio Alexandre - [Perfil Git](https://github.com/ClarkAshida)
 - Iohana Maria - [Perfil Git](https://github.com/IohanaViterbino)
+
+
+## Licença
+
+[MIT](https://choosealicense.com/licenses/mit/)
